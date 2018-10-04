@@ -15,17 +15,17 @@ public class NogIets extends Question {
     }
 
     @Override
-    public void awnserQuestion(String antwoord) {
+    public void awnserQuestion(String userAwnser) {
 
-            String awnser = null;
+            String systemAwnser = null;
             for (String mogelijkeAntwoorden : nogFinal.keySet()) {
-                if (mogelijkeAntwoorden.equalsIgnoreCase(antwoord)) {
-                    awnser = antwoord;
+                if (mogelijkeAntwoorden.equalsIgnoreCase(userAwnser)) {
+                    systemAwnser = userAwnser;
                     break;
                 }
             }
 
-            if (awnser == null) {
+            if (systemAwnser == null) {
                 System.out.println("Dit is geen correct antwoord!");
                 System.out.println("Type: " + Arrays.toString(new Set[]{this.nogFinal.keySet()}));
 
@@ -36,7 +36,7 @@ public class NogIets extends Question {
 
 
 
-        this.nogFinal.get(awnser).askQuestion();
+        this.nogFinal.get(systemAwnser).askQuestion();
 
         }
     }

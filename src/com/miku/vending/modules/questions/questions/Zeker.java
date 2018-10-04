@@ -16,17 +16,17 @@ public class Zeker extends Question {
     }
 
     @Override
-    public void awnserQuestion(String antwoord) {
+    public void awnserQuestion(String userAwnser) {
 
-        String awnser = null;
+        String systemAwnser = null;
         for (String mogelijkeAntwoorden : finalAwnsers.keySet()) {
-            if (mogelijkeAntwoorden.equalsIgnoreCase(antwoord)) {
-                awnser = antwoord;
+            if (mogelijkeAntwoorden.equalsIgnoreCase(userAwnser)) {
+                systemAwnser = userAwnser;
                 break;
             }
         }
 
-        if (awnser == null) {
+        if (systemAwnser == null) {
             System.out.println("Dit is geen correct antwoord!");
             System.out.println("Type: " + Arrays.toString(new Set[]{this.finalAwnsers.keySet()}));
 
@@ -35,15 +35,15 @@ public class Zeker extends Question {
             return;
         }
 
-        awnser  = this.finalAwnsers.get(awnser);
+        systemAwnser  = this.finalAwnsers.get(systemAwnser);
 
-        if (awnser == null) {
+        if (systemAwnser == null) {
             new DrinkenQuestions().askQuestion();
 
             return;
         }
 
-        System.out.println(awnser);
+        System.out.println(systemAwnser);
 
     }
 }

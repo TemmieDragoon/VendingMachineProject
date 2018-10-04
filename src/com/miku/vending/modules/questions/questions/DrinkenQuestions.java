@@ -14,17 +14,17 @@ public class DrinkenQuestions extends Question {
     }
 
     @Override
-    public void awnserQuestion(String antwoord) {
+    public void awnserQuestion(String userAwnser) {
 
-        String awnser = null;
+        String systemAwnser = null;
         for (String mogelijkeAntwoorden : antwoorden.keySet()) {
-            if (mogelijkeAntwoorden.equalsIgnoreCase(antwoord)) {
-                awnser = antwoord;
+            if (mogelijkeAntwoorden.equalsIgnoreCase(userAwnser)) {
+                systemAwnser = userAwnser;
                 break;
             }
         }
 
-        if (awnser == null) {
+        if (systemAwnser == null) {
             System.out.println("Dit is geen correct antwoord!");
             System.out.println("Type: " + Arrays.toString(new Set[]{this.antwoorden.keySet()}));
 
@@ -33,6 +33,6 @@ public class DrinkenQuestions extends Question {
             return;
         }
 
-        this.antwoorden.get(awnser).askQuestion();
+        this.antwoorden.get(systemAwnser).askQuestion();
     }
 }

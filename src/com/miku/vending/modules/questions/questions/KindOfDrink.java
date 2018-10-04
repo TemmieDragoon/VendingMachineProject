@@ -21,17 +21,17 @@ public class KindOfDrink extends Question {
     }
 
     @Override
-    public void awnserQuestion(String antwoord) {
+    public void awnserQuestion(String userAwnser) {
 
-        String awnser = null;
+        String systemAwnser = null;
         for (String mogelijkeAntwoorden : finalAwnsers.keySet()) {
-            if (mogelijkeAntwoorden.equalsIgnoreCase(antwoord)) {
-                awnser = antwoord;
+            if (mogelijkeAntwoorden.equalsIgnoreCase(userAwnser)) {
+                systemAwnser = userAwnser;
                 break;
             }
         }
 
-        if (awnser == null) {
+        if (systemAwnser == null) {
             System.out.println("Dit is geen correct antwoord!");
             System.out.println("Type: " + Arrays.toString(new Set[]{this.finalAwnsers.keySet()}));
 
@@ -40,7 +40,7 @@ public class KindOfDrink extends Question {
             return;
         }
 
-        System.out.println(this.finalAwnsers.get(awnser));
+        System.out.println(this.finalAwnsers.get(systemAwnser));
 
         new NogIets().askQuestion();
 
