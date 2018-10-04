@@ -35,7 +35,7 @@ public class NogIets extends Question {
             }
 
 
-
+                    //Me commits werken niet 100%
         this.nogFinal.get(systemAwnser).askQuestion();
 
         }
