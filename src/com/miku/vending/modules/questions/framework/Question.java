@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 public abstract class Question {
 
-    public Question(String vraag) {
-        this.vraag = vraag;
+    public Question(String systemQuestion) {
+        this.question= systemQuestion;
 
         antwoorden = new HashMap();
         finalAwnsers = new HashMap<>();
@@ -17,7 +17,7 @@ public abstract class Question {
         nogFinal = new HashMap<>();
     }
 
-    public String vraag;
+    public String question;
     public HashMap<String, Question> antwoorden;
     public HashMap<String, String> finalAwnsers;
     public HashMap<String, String> zeker;
@@ -26,7 +26,7 @@ public abstract class Question {
 
 
     public void askQuestion() {
-        System.out.println(this.vraag);
+        System.out.println(this.question);
 
         Scanner scanner = new Scanner(System.in);
 

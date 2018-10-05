@@ -2,6 +2,8 @@ package com.miku.vending.modules.questions.questions;
 
 import com.miku.vending.modules.questions.framework.Question;
 
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.util.Arrays;
 import java.util.Set;
 
@@ -22,6 +24,13 @@ public class KindOfDrink extends Question {
 
     @Override
     public void awnserQuestion(String userAwnser) {
+
+        int width = 12;
+        int height = 14;
+        BufferedImage can = new BufferedImage(
+                width, height,
+                BufferedImage.TYPE_INT_RGB);
+
 
         String systemAwnser = null;
         for (String mogelijkeAntwoorden : finalAwnsers.keySet()) {
